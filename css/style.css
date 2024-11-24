@@ -1,0 +1,321 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  color: #242922;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 130px auto;
+  font-size: 0.9rem;
+  padding: 0 4%;
+}
+.site-title {
+  line-height: 1px;
+}
+.site-title a {
+  display: block;
+  font-family: "Yellowtail", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #242922;
+  text-decoration: none;
+}
+.sec-title {
+  font-family: "Yellowtail", serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+/*ヘッダ-*/
+
+#header {
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 270px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* #header ul {
+  display: flex;
+  padding: 10px 0; */
+/* } */
+
+.list ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+
+}
+#header li {
+  font-size: 0.9rem;
+  margin-left: 45px;
+}
+#header li a {
+  color: #242922;
+}
+#header li a:hover {
+  opacity: 0.7;
+  color: red;
+}
+#header li img.icon {
+  width: 20px;
+}
+
+/* ハンバーガーアイコンのスタイル */
+.hamburger {
+  display: none; /* デスクトップ表示では非表示 */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #242922;
+  margin: 4px;
+  transition: 0.3s;
+}
+/* ハンバーガーアイコンのアニメーション */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,-4px); /* 上の線が斜めに変形 */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* 真ん中の線を消す */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(20px, -10px); /* 下の線が反対方向に斜めに変形 */
+}
+
+.hamburger span {
+  transition: 0.3s; /* 変形にアニメーションをつける */
+  background-color: black; /* 線の色 */
+  display: block;
+  width: 25px; /* 幅 */
+  height: 3px; /* 高さ */
+  margin: 4px; /* 各行の間隔 */
+}
+
+/* 通常の状態では、3本の線が横並び */
+.hamburger span {
+  transition: 0.3s; /* 変形にアニメーションをつける */
+}
+
+/*mainvisual*/
+#mainvisual {
+  margin-bottom: 80px;
+}
+#mainvisual img {
+  width: 100%;
+  max-width: 1920px;
+  height: 420px;
+  object-fit: cover;
+}
+
+/*About*/
+#about ul {
+  margin-bottom: 30px;
+}
+/* id="about"の要素内にあるリストの最初のli要素に対してスタイルを適用する指定 */
+#about li:first-child {
+  margin-bottom: 30px;
+}
+/* テキストを左右の両端に揃えるために使用されます。 */
+#about p {
+  text-align: justify;
+}
+
+/* menu */
+
+#menu ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+#menu li {
+  width: 31%;
+  margin-bottom: 20px;
+}
+/* news */
+#news dl {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: solid 1px #c8c8c8;
+  padding: 20px;
+}
+#news dt {
+  width: 20%;
+  border-bottom: solid 1px #c8c8c8;
+  padding: 15px;
+}
+#news dd {
+  width: 80%;
+  border-bottom: solid 1px #c8c8c8;
+  padding: 15px;
+}
+
+/* Contact */
+#contact dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+#contact dt {
+  width: 15%;
+}
+#contact dd {
+  width: 85%;
+  margin-bottom: 10px;
+}
+#contact dd input,
+#contact dd textarea {
+  width: 100%;
+  border: solid 1px #c8c8c8;
+  padding: 10px;
+}
+#contact dd textarea {
+  height: 10rem;
+}
+#contact .button {
+  text-align: center;
+}
+#contact .button input {
+  width: 200px;
+  background-color: #24292e;
+  color: #fff;
+  padding: 15px 0;
+  border: solid 1px #24292e;
+}
+#contact .button input:hover {
+  background: #fff;
+  color: #24292e;
+}
+/* footer */
+#footer {
+  background-color: #24292e;
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* レシポンシブ */
+@media screen  and (max-width: 767px) {
+  .wrapper {
+    margin-bottom: 70px;
+  }
+  .site-title {
+    margin-top: 20px;
+  }
+  .sec-title {
+    margin-bottom: 40px;
+  }
+  /* ヘッダー */
+  #header {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  /* ハンバーガー */
+  .hamburger {
+    display: flex; /* 小さい画面でハンバーガーアイコンを表示 */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;     /* 右側に配置する */
+}
+.list.open ul {
+  display: flex;
+}
+
+.hamburger span {
+  transition: 0.3s; /* 変形にアニメーションをつける */
+}
+
+nav {
+    display: none; /* デフォルトでメニューを非表示 */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    text-align: center;
+}
+
+nav ul {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    display: flex;
+}
+nav ul li {
+    margin: 10px 0;
+}
+
+/* メニューが開いたときのスタイル */
+nav.open {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+  max-width: 100%;
+  height: auto;
+  flex-direction: column;
+
+}
+  #header li{
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+  #header li:first-child {
+    margin-left: 0;
+  }
+  /* Menu */
+  #menu ul {
+    flex-direction: column;
+  }
+  #menu li {
+    width: 100%;
+  }
+  /* News */
+  #news dl {
+    flex-direction: column;
+  }
+  #news dt {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  #news dd {
+    width: 100%;
+    padding-top: 0;
+  }
+  /* Contact */
+  #contact dl {
+    flex-direction: column;
+  }
+  #contact dt {
+    width: 100%;
+  }
+  #contact dd {
+    width: 100%;
+  }
+}

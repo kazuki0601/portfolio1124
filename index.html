@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo-site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+ <header id="header">
+  <h1 class="site-title"><a href="index.html">COOFFE SHOP</a></h1>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="list">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#menu">MENU</a></li>
+      <li><a href="#news">NEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <li>
+        <a href="https://www.instagram.com/kazu_1994246/?locale=ja_JP" target="_blank">
+          <img class="icon" src="images/icon-instagram.png" alt="インスタグラム">
+        </a>
+      </li>
+    </ul>
+  </nav>
+ </header>
+
+ <main>
+  <div id="mainvisual">
+    <picture>
+      <source media="(max-width: 767px)" srcset="images/mainvisual.jpg">
+      <img src="images/mainvisual.jpg" alt="コーヒーショップ">
+    </picture>
+  </div>
+
+  <section id="about" class="wrapper">
+    <h2 class="sec-title">About</h2>
+    <ul>
+      <li>村上 一生</li>
+      <li>福井県福井市日之出2丁目4-5</li>
+      <li>Tel:090-2038-7251</li>
+      <li>Open:7:00~19:00(定休日：水曜日)</li><br>
+      <li>プロフィール<br>30代で念願の喫茶店を開業。地元での飲食業やマーケティングの経験を活かし、「誰もが気軽に訪れたくなる場所」を目指してお店を運営。開業前は、全国の名店を巡りながらコーヒーの奥深さに触れ、その魅力を多くの人と共有したいという思いを強める。</li>
+    </ul>
+    <p>
+      「あなたの毎日に、特別な一杯を。」<br>
+       日々の中で、特別なひとときを。<br>
+       コーヒーで小さな贅沢を楽しもう。<br>
+       自分へのご褒美にふさわしい一杯をどうぞ。
+    </p>
+  </section>
+
+  <section id="menu" class="wrapper">
+    <h2 class="sec-title">Menu</h2>
+    <ul>
+    <li><img class="img" src="images/menu1.png" alt=""></li>
+    <li><img class="img" src="images/menu2.png" alt=""></li>
+    <li><img class="img" src="images/menu3.png" alt=""></li>
+    <li><img class="img" src="images/menu4.png" alt=""></li>
+    <li><img class="img" src="images/menu5.png" alt=""></li>
+    <li><img class="img" src="images/menu6.png" alt=""></li>
+    </ul>
+    
+  </section>
+
+  <section id="news" class="wrapper">
+    <h2 class="sec-title">News</h2>
+    <dl>
+      <dt>2025年.12月9日</dt>
+      <dd>「チョコレートモカ」と「ストロベリータルト」が予想を上回る人気で完売！<br>お客様の笑顔が見られて、素敵な1年の締めくくりになりました。</dd>
+      <dt>2025年.8月10日</dt>
+      <dd>福井の夏にぴったりなアイスコーヒーを5種類提供するフェアを実施。<br>多くのリピーターが「香りが違う！」と感動してくださり、夏の定番イベントとなりました。</dd>
+      <dt>2025年.6月20日</dt>
+      <dd>喫茶店の「癒しの空間作り」が評価され、地元の新聞で特集記事に。<br>記事を見て来店された新規のお客様も増え、地域のつながりの大切さを感じる出来事でした。</dd>
+      <dt>2025年.4月15日</dt>
+      <dd>開業初日から多くのお客様にご来店いただき大盛況！<br>特に「季節のスイーツセット」が大好評で、地元の食材の魅力を再認識しました。</dd>
+      <dt>2025年.4月1日</dt>
+      <dd>地元の友人や家族を招き、プレオープンイベントを実施。<br>自慢の自家焙煎コーヒーとスイーツを振る舞い、たくさんの温かい応援メッセージをいただきました。</dd>
+    </dl>
+  </section>
+
+  <section id="contact" class="wrapper">
+    <h2 class="sec-title">Contact</h2>
+    <form action="#" method="post">
+      <dl>
+        <dt><label for="name">NAME</label></dt>
+        <dd><input type="text"  name="your name" id="name"></dd>
+        <dt><label for="email">E-mail</label></dt>
+        <dd><input type="email" name="your-email" id="email"></dd>
+        <dt><label for="message">MESSAGE</label></dt>
+        <dd><textarea name="your-message" id="message"></textarea></dd>
+      </dl>
+      <div class="button"><input type="submit" value="送信"></div>
+    </form>
+  </section>
+ </main>
+
+
+<footer id="footer">
+  <p>&copy; 2025</p>
+</footer>
+
+<!-- JavaScriptをbodyの最後に記述 -->
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".list"); // クラスでメニューを取得
+    const hamburger = document.querySelector(".hamburger"); // ハンバーガーアイコンを取得
+
+    menu.classList.toggle("open"); // メニューの表示を切り替え
+    hamburger.classList.toggle("active"); // ハンバーガーアイコンのアニメーションを切り替え
+}
+</script> 
+</body>
+</html>
